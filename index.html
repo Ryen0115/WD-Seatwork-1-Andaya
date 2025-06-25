@@ -1,0 +1,231 @@
+<!-- redeploy test -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ryen Jevs C. Andaya | TC05</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    header, footer {
+      background-color: #181818;
+      padding: 20px 30px;
+    }
+
+    .menu, .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: #b3b3b3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #1db954;
+    }
+
+    .hero {
+      padding: 60px 30px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(assets/img/banner.jpg);
+      background-size: cover;
+      background-position: center 15%; ;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .album {
+      background-color: #282828;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .album:hover {
+      background-color: #333;
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .album img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .album h3 {
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .play-button {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #1db954;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 12px;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .album:hover .play-button {
+      opacity: 1;
+    }
+
+    footer .footer-links {
+      flex-direction: column;
+    }
+
+    @media (min-width: 600px) {
+      footer .footer-links {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header 1: Navigation -->
+  <header>
+    <h1>Fein</h1>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Browse</a>
+      <a href="#">Radio</a>
+      <a href="#">Library</a>
+      <a href="#">Search</a>
+    </div>
+  </header>
+
+  <!-- Header 2: Hero Banner -->
+  <header class="hero">
+    <h2>Travis Scott</h2>
+    <p>Explore the top albums and tracks from the legendary artist.</p>
+  </header>
+
+  <!-- Header 3: Featured Albums Title -->
+  <header>
+    <h2>Top Albums</h2>
+    <p>Listen to Travis Scott’s most iconic albums.</p>
+  </header>
+
+  <!-- Album Cards Section -->
+<section class="albums">
+  <div class="album">
+    <img src="assets/img/astroworld.jpg" alt="Astroworld">
+    <h3>ASTROWORLD</h3>
+    <button class="play-button">▶</button>
+  </div>
+  <div class="album">
+    <img src="assets/img/birds.jpg" alt="Birds in the Trap">
+    <h3>Birds in the Trap</h3>
+    <button class="play-button">▶</button>
+  </div>
+  <div class="album">
+    <img src="assets/img/rodeo.jpg" alt="Rodeo">
+    <h3>Rodeo</h3>
+    <button class="play-button">▶</button>
+  </div>
+  <div class="album">
+    <img src="assets/img/utopia.jpg" alt="Utopia">
+    <h3>Utopia</h3>
+    <button class="play-button">▶</button>
+  </div>
+  <div class="album">
+    <img src="assets/img/dbr.jpg" alt="Days Before Rodeo">
+    <h3>Days Before Rodeo</h3>
+    <button class="play-button">▶</button>
+  </div>
+</section>
+
+
+
+  <!-- Header 4: Artist Info -->
+  <header>
+    <h2>About Travis Scott</h2>
+    <p>Travis Scott is an American rapper, singer, and producer known for his unique sound and energetic performances.</p>
+  </header>
+
+  <!-- Header 5: Upcoming Tour Info -->
+  <header>
+    <h2>Upcoming Tours</h2>
+    <p>No tours currently announced. Stay tuned for updates.</p>
+  </header>
+
+  <!-- Footer 1: About Links -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Company</a>
+      <a href="#">Team</a>
+      <a href="#">Careers</a>
+    </div>
+  </footer>
+
+  <!-- Footer 2: Help Center -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Help Center</a>
+      <a href="#">Community</a>
+      <a href="#">Tutorials</a>
+    </div>
+  </footer>
+
+  <!-- Footer 3: Contact -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Email</a>
+      <a href="#">Support</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+  <!-- Footer 4: Social Media -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </footer>
+
+  <!-- Footer 5: Legal -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Cookies</a>
+    </div>
+  </footer>
+
+</body>
+</html>
