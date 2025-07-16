@@ -1,13 +1,13 @@
-<!-- redeploy test -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ryen Jevs C. Andaya | TC05</title>
+  <title>Fein | Music Site</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
@@ -16,33 +16,55 @@
       background-color: #121212;
       color: #fff;
     }
-
-    header, footer {
-      background-color: #181818;
-      padding: 20px 30px;
+    html {
+      scroll-behavior: smooth;
     }
-
-    .menu, .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
     a {
       color: #b3b3b3;
       text-decoration: none;
       font-weight: bold;
     }
-
     a:hover {
       color: #1db954;
+    }
+    header, footer {
+      background-color: #181818;
+      padding: 20px 30px;
+    }
+
+    /* TOP BAR FIX */
+    .main-header {
+      padding: 20px 30px;
+    }
+    .main-header h1 {
+      margin: 0 0 10px 0;
+    }
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .search-bar input {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      background-color: #1f1f1f;
+      color: white;
+      outline: none;
+      width: 200px;
     }
 
     .hero {
       padding: 60px 30px;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(assets/img/banner.jpg);
       background-size: cover;
-      background-position: center 15%; ;
+      background-position: center 15%;
     }
 
     .hero h2 {
@@ -50,180 +72,270 @@
       margin-bottom: 10px;
     }
 
-    .albums {
+    .albums, .merch-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 20px;
       padding: 30px;
     }
 
-    .album {
+    .album, .merch-item {
       background-color: #282828;
       padding: 15px;
       border-radius: 10px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .album:hover {
-      background-color: #333;
+    .album:hover, .merch-item:hover {
       transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
-    .album img {
+    .album img, .merch-item img {
       width: 100%;
       border-radius: 5px;
     }
 
-    .album h3 {
+    .album h3, .merch-item p {
       font-size: 1em;
       margin-top: 10px;
     }
 
-    .play-button {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      background-color: #1db954;
-      color: white;
+    .sign-up-section {
+      padding: 40px 30px;
+      background-color: #181818;
+      text-align: center;
+    }
+
+    .sign-up-form {
+      max-width: 300px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sign-up-form input {
+      padding: 10px;
       border: none;
-      border-radius: 50%;
-      padding: 10px 12px;
-      font-size: 16px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+    }
+
+    .sign-up-form label {
+      font-size: 0.9em;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #ccc;
+    }
+
+    .sign-up-form button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #1db954;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    .album:hover .play-button {
-      opacity: 1;
+    .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 8px;
+      transition: background-color 0.3s ease;
     }
 
-    footer .footer-links {
-      flex-direction: column;
+    .social-icons a:hover {
+      background-color: #1db954;
     }
 
-    @media (min-width: 600px) {
-      footer .footer-links {
-        flex-direction: row;
-      }
+    hr.section-split {
+      border: none;
+      height: 1px;
+      background-color: #333;
+      margin: 50px 0 20px;
+    }
+
+    .section-breaker {
+      text-align: center;
+      padding: 40px 30px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header 1: Navigation -->
-  <header>
+  <!-- HEADER -->
+  <header class="main-header">
+    <h1>Fein</h1>
+    <div class="nav-bar">
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#browse">Browse</a>
+        <a href="#radio">Radio</a>
+        <a href="#library">Library</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <h2>Travis Scott</h2>
+    <p>Explore the top albums and tracks from the legendary artist.</p>
+  </header>
+
+  <!-- ALBUMS -->
+  <section class="albums" id="browse">
+    <div class="album"><img src="assets/img/astroworld.jpg" alt="Astroworld"><h3>ASTROWORLD</h3></div>
+    <div class="album"><img src="assets/img/birds.jpg" alt="Birds in the Trap"><h3>Birds in the Trap</h3></div>
+    <div class="album"><img src="assets/img/rodeo.jpg" alt="Rodeo"><h3>Rodeo</h3></div>
+    <div class="album"><img src="assets/img/utopia.jpg" alt="Utopia"><h3>Utopia</h3></div>
+    <div class="album"><img src="assets/img/dbr.jpg" alt="Days Before Rodeo"><h3>Days Before Rodeo</h3></div>
+  </section>
+
+  <!-- MERCH -->
+  <section class="merch-grid">
+    <div class="merch-item"><img src="assets/img/merch1.jpg" alt="T-Shirt"><p>T-Shirt</p></div>
+    <div class="merch-item"><img src="assets/img/merch2.jpg" alt="Hoodie"><p>Hoodie</p></div>
+    <div class="merch-item"><img src="assets/img/merch3.jpg" alt="Poster"><p>Poster</p></div>
+    <div class="merch-item"><img src="assets/img/merch4.jpg" alt="Cap"><p>Cap</p></div>
+  </section>
+
+  <!-- SIGN UP -->
+  <section class="sign-up-section">
+    <h2>Create an Account</h2>
+    <form class="sign-up-form">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <input type="password" placeholder="Confirm Password">
+      <label><input type="checkbox"> I agree to the Terms and Conditions</label>
+      <button>Create Account</button>
+    </form>
+  </section>
+
+  <!-- MAIN FOOTER -->
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+      <div><strong>Company</strong><br>
+        <a href="#">About</a><br>
+        <a href="#">Team</a><br>
+        <a href="#">Careers</a>
+      </div>
+      <div><strong>Help & Support</strong><br>
+        <a href="#">Help Center</a><br>
+        <a href="#">Community</a><br>
+        <a href="#">Tutorials</a>
+      </div>
+      <div><strong>Contact</strong><br>
+        <a href="#">Email Us</a><br>
+        <a href="#">Support Team</a><br>
+        <a href="#">Twitter DM</a>
+      </div>
+      <div><strong>Follow Us</strong><br>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SECTION BREAKER -->
+  <section class="section-breaker">
+    <h2>Experience More Layouts</h2>
+    <p>Headers and Footers in different layout, designs and style</p>
+  </section>
+
+  <!-- HEADER/FOOTER SETS -->
+  <!-- SET 1 -->
+  <hr class="section-split">
+  <header style="background-color:#1a1a1a; text-align:center; padding:20px;">
+    <h1 style="color:#1db954;">Fein</h1>
+    <div class="menu" style="justify-content:center;">
+      <a href="#">Home</a>
+      <a href="#">Browse</a>
+      <a href="#">Radio</a>
+      <a href="#">Library</a>
+    </div>
+  </header>
+  <hr class="section-split">
+  <footer style="background-color:#222; padding:30px; text-align:center;">
+    <a href="#">About</a> | <a href="#">Team</a> | <a href="#">Careers</a>
+    <div class="social-icons" style="margin-top:15px;">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- SET 2 -->
+  <hr class="section-split">
+  <header style="background:#111; padding:30px;">
     <h1>Fein</h1>
     <div class="menu">
       <a href="#">Home</a>
       <a href="#">Browse</a>
       <a href="#">Radio</a>
       <a href="#">Library</a>
-      <a href="#">Search</a>
     </div>
   </header>
-
-  <!-- Header 2: Hero Banner -->
-  <header class="hero">
-    <h2>Travis Scott</h2>
-    <p>Explore the top albums and tracks from the legendary artist.</p>
-  </header>
-
-  <!-- Header 3: Featured Albums Title -->
-  <header>
-    <h2>Top Albums</h2>
-    <p>Listen to Travis Scott’s most iconic albums.</p>
-  </header>
-
-  <!-- Album Cards Section -->
-<section class="albums">
-  <div class="album">
-    <img src="assets/img/astroworld.jpg" alt="Astroworld">
-    <h3>ASTROWORLD</h3>
-    <button class="play-button">▶</button>
-  </div>
-  <div class="album">
-    <img src="assets/img/birds.jpg" alt="Birds in the Trap">
-    <h3>Birds in the Trap</h3>
-    <button class="play-button">▶</button>
-  </div>
-  <div class="album">
-    <img src="assets/img/rodeo.jpg" alt="Rodeo">
-    <h3>Rodeo</h3>
-    <button class="play-button">▶</button>
-  </div>
-  <div class="album">
-    <img src="assets/img/utopia.jpg" alt="Utopia">
-    <h3>Utopia</h3>
-    <button class="play-button">▶</button>
-  </div>
-  <div class="album">
-    <img src="assets/img/dbr.jpg" alt="Days Before Rodeo">
-    <h3>Days Before Rodeo</h3>
-    <button class="play-button">▶</button>
-  </div>
-</section>
-
-
-
-  <!-- Header 4: Artist Info -->
-  <header>
-    <h2>About Travis Scott</h2>
-    <p>Travis Scott is an American rapper, singer, and producer known for his unique sound and energetic performances.</p>
-  </header>
-
-  <!-- Header 5: Upcoming Tour Info -->
-  <header>
-    <h2>Upcoming Tours</h2>
-    <p>No tours currently announced. Stay tuned for updates.</p>
-  </header>
-
-  <!-- Footer 1: About Links -->
-  <footer>
-    <div class="footer-links">
-      <a href="#">Company</a>
-      <a href="#">Team</a>
-      <a href="#">Careers</a>
-    </div>
+  <hr class="section-split">
+  <footer style="background:#111; padding:30px; color:#ccc;">
+    <div><strong>Company</strong><br><a href="#">About</a> | <a href="#">Team</a></div>
+    <div><strong>Help</strong><br><a href="#">FAQs</a> | <a href="#">Support</a></div>
+    <div><strong>Contact</strong><br><a href="#">Email</a> | <a href="#">Twitter</a></div>
   </footer>
 
-  <!-- Footer 2: Help Center -->
-  <footer>
-    <div class="footer-links">
-      <a href="#">Help Center</a>
-      <a href="#">Community</a>
-      <a href="#">Tutorials</a>
+  <!-- SET 3 -->
+  <hr class="section-split">
+  <header style="background: linear-gradient(to left, #1db954, #121212); padding: 40px;">
+    <h1 style="color:white;">Fein</h1>
+    <div class="menu" style="margin-top:10px;">
+      <a href="#">Home</a>
+      <a href="#">Browse</a>
+      <a href="#">Radio</a>
+      <a href="#">Library</a>
     </div>
+  </header>
+  <hr class="section-split">
+  <footer style="background:#181818; padding:40px;">
+    <div><strong>Company</strong><br><a href="#">About</a> | <a href="#">Careers</a></div>
+    <div><strong>Support</strong><br><a href="#">Help</a> | <a href="#">Guides</a></div>
+    <div><strong>Contact</strong><br><a href="#">Email</a> | <a href="#">Chat</a></div>
   </footer>
 
-  <!-- Footer 3: Contact -->
-  <footer>
-    <div class="footer-links">
-      <a href="#">Email</a>
-      <a href="#">Support</a>
-      <a href="#">Twitter</a>
+  <!-- SET 4 -->
+  <hr class="section-split">
+  <header style="background-color:#000; padding:50px; text-align:center;">
+    <h1 style="color:#1db954;">Fein</h1>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Browse</a>
+      <a href="#">Radio</a>
+      <a href="#">Library</a>
     </div>
-  </footer>
-
-  <!-- Footer 4: Social Media -->
-  <footer>
-    <div class="footer-links">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-    </div>
-  </footer>
-
-  <!-- Footer 5: Legal -->
-  <footer>
-    <div class="footer-links">
-      <a href="#">Terms</a>
-      <a href="#">Privacy</a>
-      <a href="#">Cookies</a>
+  </header>
+  <hr class="section-split">
+  <footer style="background:#000; padding:30px; text-align:center;">
+    <a href="#">About</a> | <a href="#">Team</a> | <a href="#">Careers</a> | <a href="#">Help</a>
+    <div class="social-icons" style="margin-top:10px;">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
   </footer>
 
