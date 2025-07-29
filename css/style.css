@@ -1,0 +1,205 @@
+/* RESET & BASICS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.main-header {
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-header h1 {
+  color: #1db954;
+  font-size: 28px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: #1db954;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #1db954, #121212);
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* ALBUMS */
+.albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  text-align: center;
+  background-color: #000;
+}
+
+.album img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.album h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* MERCH SECTION */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background-color: #121212;
+  text-align: center;
+}
+
+.merch-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.merch-item p {
+  margin-top: 8px;
+}
+
+/* SIGN-UP SECTION */
+.sign-up-section {
+  background-color: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sign-up-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  gap: 15px;
+}
+
+.sign-up-form input[type=\"email\"],
+.sign-up-form input[type=\"password\"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.sign-up-form button {
+  background-color: #1db954;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sign-up-form button:hover {
+  background-color: #1ed760;
+}
+
+/* FOOTER */
+footer {
+  background-color: #121212;
+  padding: 40px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+footer a {
+  color: #aaa;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+footer a:hover {
+  color: #1db954;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.social-icons a:hover {
+  color: #1db954;
+}
+
+/* SECTION BREAKER */
+.section-breaker {
+  background-color: #111;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 2px solid #333;
+}
+
+.section-breaker h2 {
+  font-size: 30px;
+  color: #fff;
+}
+
+.section-breaker p {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* SECTION SPLITS (Unique Classes) */
+.split-set1,
+.split-set2,
+.split-set3,
+.split-set4 {
+  border-top: 1px solid #333;
+  margin: 60px 0;
+}
